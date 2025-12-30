@@ -1,0 +1,76 @@
+---
+const currentPath = Astro.url.pathname;
+const navItems = [
+  { path: '/', label: 'Home' },
+  { path: '/our-story', label: 'Our Story' },
+  { path: '/photos', label: 'Photos' },
+  { path: '/faq', label: 'FAQ' },
+  { path: '/travel', label: 'Travel' },
+  { path: '/things-to-do', label: 'Things to Do' },
+  { path: '/registry', label: 'Registry' },
+  { path: '/rsvp', label: 'RSVP' },
+];
+---
+
+<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm py-4 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+    <a href="/" class="text-2xl font-semibold text-pink-600 tracking-wider no-underline">J & A</a>
+    <ul class="hidden md:flex list-none gap-8 m-0 p-0">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.path}
+            class:list={{
+              'text-gray-700 no-underline text-sm font-medium transition-colors relative': true,
+              'text-pink-600': currentPath === item.path,
+              'hover:text-pink-600': currentPath !== item.path,
+            }}
+          >
+            {item.label}
+            {currentPath === item.path && (
+              <span class="absolute bottom-[-6px] left-0 right-0 h-0.5 bg-pink-600"></span>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <button 
+      class="md:hidden flex flex-col gap-1 bg-transparent border-none cursor-pointer p-2 nav-toggle" 
+      aria-label="Toggle navigation"
+    >
+      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+    </button>
+  </div>
+  <ul class="md:hidden hidden flex-col absolute top-full left-0 right-0 bg-white shadow-lg p-4 gap-4 nav-menu">
+    {navItems.map((item) => (
+      <li>
+        <a
+          href={item.path}
+          class:list={{
+            'text-gray-700 no-underline font-medium transition-colors block py-2': true,
+            'text-pink-600': currentPath === item.path,
+            'hover:text-pink-600': currentPath !== item.path,
+          }}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+  });
+</script>
+

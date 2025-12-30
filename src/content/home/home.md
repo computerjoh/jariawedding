@@ -1,0 +1,12 @@
+---
+title: J & A
+subtitle: We're Getting Married!
+dateLabel: Save the Date
+dateDetail: "July 24th 2025 |     1750 13th St
+    Boulder, CO 80302"
+intro: |
+  We are thrilled to celebrate our wedding with our family and friends. 
+  This website contains all the information you'll need for our special day, 
+  including travel details, accommodations, and more.
+---
+

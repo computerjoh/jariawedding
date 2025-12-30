@@ -1,0 +1,35 @@
+---
+import { getEntry } from "astro:content";
+import Card from "../components/Card.astro";
+import PageContainer from "../components/PageContainer.astro";
+import Layout from "../layouts/Layout.astro";
+
+const thingsToDo = await getEntry("things-to-do", "things-to-do");
+if (!thingsToDo) {
+	throw new Error("Things to do content entry not found");
+}
+---
+
+<Layout title="Things to Do - J & A Wedding">
+	<PageContainer maxWidth="lg">
+		<Card>
+			<h1 class="text-4xl sm:text-5xl mb-6 text-pink-600">{thingsToDo.data.title}</h1>
+			<p class="mb-10 text-lg text-gray-600 whitespace-pre-line">
+				{thingsToDo.data.intro}
+			</p>
+			<div class="flex flex-col gap-8 mt-8">
+				{thingsToDo.data.categories.map((category, categoryIndex) => (
+					<div class="bg-pink-50 p-8 rounded-lg border-t-4 border-pink-600">
+						<h3 class="text-xl mb-4 text-pink-600 mt-0">{category.name}</h3>
+						<ul class="list-none p-0 m-0">
+							{category.items.map((item, itemIndex) => (
+								<li class="py-2 pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-pink-600 before:font-bold">{item}</li>
+							))}
+						</ul>
+					</div>
+				))}
+			</div>
+		</Card>
+	</PageContainer>
+</Layout>
+

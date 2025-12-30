@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageContainer from '../components/PageContainer.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Registry - J & A Wedding">
+	<PageContainer maxWidth="lg">
+		<Card>
+			<h1 class="text-4xl sm:text-5xl mb-6 text-pink-600">Wedding Registry</h1>
+			<p class="mb-8 text-lg text-gray-600">
+				Your presence at our wedding is the greatest gift of all. However, if you would like to honor us with a gift, we're saving for our house fund.
+			</p>
+			
+			<div class="flex flex-col gap-8">
+				<div>
+					<h2 class="text-2xl sm:text-3xl mb-4 text-pink-600">Venmo</h2>
+					<div class="bg-pink-50 p-6 rounded-lg border-2 border-pink-600 inline-block">
+						<p class="text-xl font-semibold text-gray-800 mb-2">@YourVenmoHandle</p>
+						<p class="text-sm text-gray-600 m-0">House Fund</p>
+					</div>
+				</div>
+				
+				<div>
+					<h2 class="text-2xl sm:text-3xl mb-4 text-pink-600">Scan to Pay</h2>
+					<div class="bg-gray-200 rounded-lg w-64 h-64 flex items-center justify-center">
+						<span class="text-gray-500">QR Code Placeholder</span>
+					</div>
+					<p class="text-sm text-gray-600 mt-4">Scan with your phone's camera to send via Venmo</p>
+				</div>
+			</div>
+		</Card>
+	</PageContainer>
+</Layout>
+

@@ -1,0 +1,28 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageContainer from '../components/PageContainer.astro';
+import Card from '../components/Card.astro';
+
+const faq = await getEntry('faq', 'faq');
+if (!faq) {
+	throw new Error('FAQ content entry not found');
+}
+---
+
+<Layout title="FAQ - J & A Wedding">
+	<PageContainer maxWidth="lg">
+		<Card>
+			<h1 class="text-4xl sm:text-5xl mb-6 text-pink-600">{faq.data.title}</h1>
+			<div class="mt-8 space-y-10">
+				{faq.data.questions.map((item, index) => (
+					<div class={`pb-10 border-b border-gray-200 ${index === faq.data.questions.length - 1 ? 'border-0 pb-0' : ''}`}>
+						<h3 class="text-xl mb-3 text-pink-600">{item.question}</h3>
+						<p class="text-gray-600 leading-relaxed m-0 whitespace-pre-line">{item.answer}</p>
+					</div>
+				))}
+			</div>
+		</Card>
+	</PageContainer>
+</Layout>
+
