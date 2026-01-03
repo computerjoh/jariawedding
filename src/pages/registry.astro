@@ -1,35 +1,49 @@
 ---
-import { Image } from "astro:assets";
-import venmo from "../assets/venmo.png";
 import Card from "../components/Card.astro";
 import PageContainer from "../components/PageContainer.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Registry - J & A Wedding">
-	<PageContainer maxWidth="lg">
-		<Card>
-			<h1 class="text-4xl sm:text-5xl mb-6 text-pink-600">
-				Wedding Registry
-			</h1>
-			<p class="mb-8 text-lg text-gray-600">
-				Your presence at our wedding is the greatest gift of all.
-				However, if you would like to honor us with a gift, we're saving
-				for our house fund.
-			</p>
+  <PageContainer maxWidth="lg">
+    <Card>
+      <h1 class="text-4xl sm:text-5xl mb-6 text-pink-600">
+        Wedding Registry
+      </h1>
 
-			<div class="text-center">
-				<h2 class="text-2xl sm:text-3xl font-sans text-gray-800 mb-2">
-					John Korhel
-				</h2>
-				<p class="text-lg font-sans text-gray-500 mb-6">
-					@John-Korhel-2
-				</p>
-				<Image src={venmo} alt="Venmo QR code for John Korhel" />
-				<p class="text-2xl font-bold italic font-sans text-black">
-					venmo
-				</p>
-			</div>
-		</Card>
-	</PageContainer>
+      <p class="mb-6 text-lg text-gray-700 leading-relaxed">
+        We are so grateful to celebrate our wedding with you.
+        Your love, support, and presence truly mean the world to us.
+      </p>
+
+      <p class="mb-6 text-lg text-gray-700 leading-relaxed">
+        We're fortunate to already have what we need for our home, so we've
+        chosen not to create a traditional registry. If you were hoping to give
+        a gift, we're currently saving toward our first home together.
+      </p>
+
+      <p class="mb-8 text-lg text-gray-700 leading-relaxed">
+        Please know that gifts are completely optional, we're simply happy
+        you're celebrating with us.
+      </p>
+
+      <div class="border-t pt-6 mt-8 text-gray-700">
+        <h2 class="text-xl font-semibold mb-4">
+          Gift Options
+        </h2>
+
+        <ul class="space-y-2 text-lg">
+          <li>
+            <strong>Zelle:</strong> 303-218-8976
+          </li>
+          <li>
+            <strong>Venmo:</strong> @John-Korhel-2
+          </li>
+          <li>
+            <strong>Cash or Check:</strong> Always welcome at the wedding
+          </li>
+        </ul>
+      </div>
+    </Card>
+  </PageContainer>
 </Layout>
