@@ -5,9 +5,16 @@ import Navigation from "../components/Navigation.astro";
 
 interface Props {
 	title?: string;
+	description?: string;
 }
 
-const { title = "J & A Wedding" } = Astro.props;
+const { 
+	title = "J & A Wedding",
+	description = "Join us for our special day! Wedding information, travel details, registry, and more."
+} = Astro.props;
+
+const siteUrl = Astro.site?.href || new URL(Astro.url.pathname, Astro.url.origin).href;
+const fullTitle = title === "J & A Wedding" ? title : `${title} | J & A Wedding`;
 ---
 
 <!doctype html>
@@ -17,7 +24,23 @@ const { title = "J & A Wedding" } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		
+		<!-- Primary Meta Tags -->
+		<title>{fullTitle}</title>
+		<meta name="title" content={fullTitle} />
+		<meta name="description" content={description} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={siteUrl} />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={siteUrl} />
+		<meta property="twitter:title" content={fullTitle} />
+		<meta property="twitter:description" content={description} />
 	</head>
 	<body
 		class="font-serif text-gray-800 bg-pink-50 flex flex-col min-h-screen"

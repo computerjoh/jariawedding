@@ -1,8 +1,8 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import PageContainer from "../components/PageContainer.astro";
 import Card from "../components/Card.astro";
+import PageContainer from "../components/PageContainer.astro";
+import Layout from "../layouts/Layout.astro";
 
 const faq = await getEntry("faq", "faq");
 if (!faq) {

@@ -1,5 +1,5 @@
 ---
-title: J & A
+title: John & Aria
 subtitle: We're Getting Married!
 dateLabel: Save the Date
 dateDetail: "July 24th 2025 |     1750 13th St
