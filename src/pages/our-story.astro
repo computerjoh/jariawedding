@@ -1,7 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import PageContainer from "../components/PageContainer.astro";
+import { Image } from "astro:assets";
+import one from "../assets/1.jpg";
+import five from "../assets/5.jpg";
 import Card from "../components/Card.astro";
+import PageContainer from "../components/PageContainer.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Our Story - J & A Wedding">
@@ -9,20 +12,21 @@ import Card from "../components/Card.astro";
 		<Card>
 			<h1 class="text-4xl sm:text-5xl mb-8 text-pink-600">Our Story</h1>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-				<div
-					class="bg-gray-200 rounded-lg aspect-[4/3] flex items-center justify-center"
-				>
-					<span class="text-gray-500 text-lg"
-						>Placeholder Image 1</span
-					>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+				<div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+					<Image
+						src={five}
+						alt="wedding photo"
+						class="absolute inset-0 h-full w-full object-cover"
+					/>
 				</div>
-				<div
-					class="bg-gray-200 rounded-lg aspect-[4/3] flex items-center justify-center"
-				>
-					<span class="text-gray-500 text-lg"
-						>Placeholder Image 2</span
-					>
+
+				<div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+					<Image
+						src={one}
+						alt="wedding photo"
+						class="absolute inset-0 h-full w-full object-cover"
+					/>
 				</div>
 			</div>
 
