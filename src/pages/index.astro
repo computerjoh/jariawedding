@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import Card from "../components/Card.astro";
+import Carousel from "../components/Carousel.astro";
 import PageContainer from "../components/PageContainer.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -39,6 +40,7 @@ if (!home) {
 			</div>
 		</div>
 	</div>
+	<Carousel />
 	<PageContainer maxWidth="lg" className="pb-16">
 		<Card className="text-center mb-12">
 			<h2 class="text-3xl sm:text-4xl mb-6 text-pink-600">

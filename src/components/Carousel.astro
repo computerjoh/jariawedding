@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import img1 from "../assets/1.jpg";
+import img2 from "../assets/2.jpg";
+import img3 from "../assets/3.jpg";
+import img4 from "../assets/4.jpg";
+import img5 from "../assets/5.jpg";
+import img6 from "../assets/6.jpg";
+import img7 from "../assets/7.jpg";
+import img8 from "../assets/8.jpg";
+import img9 from "../assets/9.jpg";
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+---
+
+<div class="max-w-5xl mx-auto mb-20 px-4">
+  <div class="relative overflow-hidden rounded-2xl shadow-lg">
+    <div
+      class="flex transition-transform duration-500"
+      id="carousel-track"
+    >
+      {images.map((img) => (
+ <div class="min-w-full max-h-[70vh] flex items-center justify-center bg-gray-100">
+          <Image
+            src={img}
+            alt="Engagement photo"
+            class="object-cover w-full h-full"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Controls -->
+    <button
+      class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-pink-600 rounded-full w-10 h-10 shadow"
+      onclick="move(-1)"
+    >
+      ‹
+    </button>
+    <button
+      class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-pink-600 rounded-full w-10 h-10 shadow"
+      onclick="move(1)"
+    >
+      ›
+    </button>
+  </div>
+</div>
+
+<script>
+  let index = 0;
+  const track = document.getElementById("carousel-track");
+
+  window.move = (dir) => {
+    index = (index + dir + track.children.length) % track.children.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  };
+</script>
