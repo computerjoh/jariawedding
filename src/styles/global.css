@@ -3,3 +3,127 @@
 body {
   font-family: 'Libre Caslon Text', serif;
 }
+
+/**
+ * Theme Configuration
+ * 
+ * All colors are centralized here using Tailwind v4's @theme directive.
+ * 
+ * Usage in components:
+ * - Use Tailwind classes: text-pink-600, bg-pink-50, etc.
+ * - Use semantic colors in CSS: var(--color-primary), var(--color-text), etc.
+ * - To change the entire color scheme, just update the values below.
+ * 
+ * Color naming convention:
+ * - Scale colors: gray-50 through gray-950, pink-50 through pink-950 (maroon theme)
+ * - Semantic colors: primary, text, background, surface, border
+ * - Accent colors: accent-1 through accent-4 (for gradients and special effects)
+ */
+@theme {
+  /* Gray scale - neutral colors for text and backgrounds */
+  --color-gray-50: oklch(0.984 0.003 247.858);
+  --color-gray-100: oklch(0.968 0.007 247.896);
+  --color-gray-200: oklch(0.929 0.013 255.508);
+  --color-gray-300: oklch(0.869 0.022 252.894);
+  --color-gray-400: oklch(0.704 0.04 256.788);
+  --color-gray-500: oklch(0.554 0.046 257.417);
+  --color-gray-600: oklch(0.446 0.043 257.281);
+  --color-gray-700: oklch(0.372 0.044 257.287);
+  --color-gray-800: oklch(0.279 0.041 260.031);
+  --color-gray-900: oklch(0.208 0.042 265.755);
+  --color-gray-950: oklch(0.129 0.042 264.695);
+
+  /* Maroon scale - wedding theme primary colors */
+  --color-pink-50: oklch(0.98 0.015 20);
+  --color-pink-100: oklch(0.95 0.03 20);
+  --color-pink-200: oklch(0.90 0.05 20);
+  --color-pink-300: oklch(0.85 0.08 20);
+  --color-pink-400: oklch(0.75 0.12 20);
+  --color-pink-500: oklch(0.65 0.15 20);
+  --color-pink-600: oklch(0.50 0.18 20);
+  --color-pink-700: oklch(0.40 0.20 20);
+  --color-pink-800: oklch(0.30 0.18 20);
+  --color-pink-900: oklch(0.22 0.15 20);
+  --color-pink-950: oklch(0.15 0.12 20);
+
+  /* Semantic color aliases - use these for easier maintenance */
+  --color-primary: var(--color-pink-600);
+  --color-primary-light: var(--color-pink-50);
+  --color-primary-dark: var(--color-pink-700);
+  --color-text: var(--color-gray-800);
+  --color-text-muted: var(--color-gray-600);
+  --color-text-light: var(--color-gray-500);
+  --color-background: var(--color-pink-50);
+  --color-surface: white;
+  --color-border: var(--color-gray-200);
+
+  /* Accent colors for gradients and special effects */
+  --color-accent-1: oklch(0.50 0.20 25);  /* Deep maroon */
+  --color-accent-2: oklch(0.55 0.22 15);  /* Rich burgundy */
+  --color-accent-3: oklch(0.70 0.15 20);  /* Light maroon */
+  --color-accent-4: oklch(0.45 0.18 18);  /* Dark maroon */
+}
+
+/* Utility classes for complex styles */
+.btn-gradient {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  color: white;
+  background: linear-gradient(83.21deg, var(--color-accent-1) 0%, var(--color-accent-2) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-gradient:hover {
+  color: oklch(0.90 0.01 0);
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .btn-gradient {
+    padding: 14px 18px;
+  }
+}
+
+pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-weight: normal;
+  background: linear-gradient(14deg, var(--color-accent-4) 0%, var(--color-accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+code {
+  display: inline-block;
+  background:
+    linear-gradient(66.77deg, var(--color-pink-200) 0%, var(--color-pink-300) 100%) padding-box,
+    linear-gradient(155deg, var(--color-accent-4) 0%, var(--color-accent-2) 18%, var(--color-pink-300) 45%) border-box;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 6px 8px;
+}
+
+.news-box {
+  padding: 16px;
+  background: var(--color-surface);
+  border-radius: 16px;
+  border: 1px solid var(--color-surface);
+  backdrop-filter: blur(50px);
+}
+
+.news-box:hover {
+  background: oklch(from var(--color-surface) l c h / 0.55);
+}
+
+@media (max-height: 368px) {
+  .news-box {
+    display: none;
+  }
+}

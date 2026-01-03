@@ -1,13 +1,13 @@
 ---
-import '@fontsource/libre-caslon-text';
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import "@fontsource/libre-caslon-text";
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
 
 interface Props {
 	title?: string;
 }
 
-const { title = 'J & A Wedding' } = Astro.props;
+const { title = "J & A Wedding" } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,13 +19,12 @@ const { title = 'J & A Wedding' } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="font-serif text-gray-800 bg-pink-50 flex flex-col min-h-screen">
+	<body
+		class="font-serif text-gray-800 bg-pink-50 flex flex-col min-h-screen"
+	>
 		<Navigation />
 		<main class="flex-grow py-8">
 			<slot />
 		</main>
-		<footer class="bg-pink-100 text-center py-8 mt-16 text-gray-600 text-sm">
-			<p>&copy; 2024 J & A Wedding. Made with ❤️</p>
-		</footer>
 	</body>
 </html>

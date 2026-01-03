@@ -11,14 +11,27 @@ if (!home) {
 ---
 
 <Layout title="Home - J & A Wedding">
-	<div class="bg-gradient-to-br from-pink-50 to-pink-100 py-16 sm:py-24 text-center mb-16">
+	<div
+		class="bg-gradient-to-br from-pink-50 to-pink-100 py-16 sm:py-24 text-center mb-16"
+	>
 		<div class="max-w-3xl mx-auto px-4">
-			<h1 class="text-4xl sm:text-5xl mb-4 tracking-widest text-pink-600">{home.data.title}</h1>
-			<p class="text-2xl sm:text-3xl mb-6 text-gray-600 italic">{home.data.subtitle}</p>
-			<p class="text-xl sm:text-2xl mb-2 text-pink-600 font-semibold">{home.data.dateLabel}</p>
-			<p class="text-lg sm:text-xl mb-10 text-gray-600">{home.data.dateDetail}</p>
+			<h1 class="text-4xl sm:text-5xl mb-4 tracking-widest text-pink-600">
+				{home.data.title}
+			</h1>
+			<p class="text-2xl sm:text-3xl mb-6 text-gray-600 italic">
+				{home.data.subtitle}
+			</p>
+			<p class="text-xl sm:text-2xl mb-2 text-pink-600 font-semibold">
+				{home.data.dateLabel}
+			</p>
+			<p class="text-lg sm:text-xl mb-10 text-gray-600">
+				{home.data.dateDetail}
+			</p>
 			<div class="flex gap-4 justify-center flex-wrap">
-				<a href="/our-story" class="px-8 py-4 border-2 border-pink-600 text-pink-600 rounded-lg text-lg font-semibold no-underline transition-colors hover:bg-pink-600 hover:text-white">
+				<a
+					href="/our-story"
+					class="px-8 py-4 border-2 border-pink-600 text-pink-600 rounded-lg text-lg font-semibold no-underline transition-colors hover:bg-pink-600 hover:text-white"
+				>
 					Our Story
 				</a>
 			</div>
@@ -26,28 +39,53 @@ if (!home) {
 	</div>
 	<PageContainer maxWidth="lg" className="pb-16">
 		<Card className="text-center mb-12">
-			<h2 class="text-3xl sm:text-4xl mb-4 text-pink-600">Join Us for Our Special Day</h2>
-			<p class="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed whitespace-pre-line">
+			<h2 class="text-3xl sm:text-4xl mb-4 text-pink-600">
+				Join Us for Our Special Day
+			</h2>
+			<p
+				class="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed whitespace-pre-line"
+			>
 				{home.data.intro}
 			</p>
 		</Card>
 		<Card>
-			<h2 class="text-3xl sm:text-4xl mb-8 text-center text-pink-600">Quick Links</h2>
+			<h2 class="text-3xl sm:text-4xl mb-8 text-center text-pink-600">
+				Quick Links
+			</h2>
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-				<a href="/travel" class="bg-pink-50 p-6 rounded-lg no-underline transition-all border-2 border-transparent hover:border-pink-600 hover:-translate-y-1 hover:shadow-lg text-center">
+				<a
+					href="/travel"
+					class="bg-pink-50 p-6 rounded-lg no-underline transition-all border-2 border-transparent hover:border-pink-600 hover:-translate-y-1 hover:shadow-lg text-center"
+				>
 					<h3 class="text-xl mb-2 text-pink-600 mt-0">Travel</h3>
-					<p class="text-gray-600 m-0">Accommodations and travel information</p>
+					<p class="text-gray-600 m-0">
+						Accommodations and travel information
+					</p>
 				</a>
-				<a href="/faq" class="bg-pink-50 p-6 rounded-lg no-underline transition-all border-2 border-transparent hover:border-pink-600 hover:-translate-y-1 hover:shadow-lg text-center">
+				<a
+					href="/faq"
+					class="bg-pink-50 p-6 rounded-lg no-underline transition-all border-2 border-transparent hover:border-pink-600 hover:-translate-y-1 hover:shadow-lg text-center"
+				>
 					<h3 class="text-xl mb-2 text-pink-600 mt-0">FAQ</h3>
 					<p class="text-gray-600 m-0">Frequently asked questions</p>
 				</a>
-				<a href="/registry" class="bg-pink-50 p-6 rounded-lg no-underline transition-all border-2 border-transparent hover:border-pink-600 hover:-translate-y-1 hover:shadow-lg text-center">
+				<a
+					href="/registry"
+					class="bg-pink-50 p-6 rounded-lg no-underline transition-all border-2 border-transparent hover:border-pink-600 hover:-translate-y-1 hover:shadow-lg text-center"
+				>
 					<h3 class="text-xl mb-2 text-pink-600 mt-0">Registry</h3>
-					<p class="text-gray-600 m-0">Wedding registry information</p>
+					<p class="text-gray-600 m-0">
+						Wedding registry information
+					</p>
+				</a>
+				<a
+					href="/registry"
+					class="bg-pink-50 p-6 rounded-lg no-underline transition-all border-2 border-transparent hover:border-pink-600 hover:-translate-y-1 hover:shadow-lg text-center"
+				>
+					<h3 class="text-xl mb-2 text-pink-600 mt-0">Photos</h3>
+					<p class="text-gray-600 m-0">View wedding photos</p>
 				</a>
 			</div>
 		</Card>
 	</PageContainer>
 </Layout>
-
