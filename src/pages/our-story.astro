@@ -2,6 +2,12 @@
 import { Image } from "astro:assets";
 import one from "../assets/1.jpg";
 import five from "../assets/5.jpg";
+import button1 from "../assets/button_1.jpg";
+import button2 from "../assets/button_2.jpg";
+import climb from "../assets/climb.jpg";
+import proposal1 from "../assets/proposal_1.jpg";
+import proposal2 from "../assets/proposal_2.jpg";
+import river from "../assets/river.jpg";
 import Card from "../components/Card.astro";
 import PageContainer from "../components/PageContainer.astro";
 import Layout from "../layouts/Layout.astro";
@@ -31,14 +37,65 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 
 			<p class="text-gray-600 leading-relaxed text-lg">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris
-				nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-				in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-				nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-				sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
+We met on Hinge, not expecting much, until Aria messaged John out of the blue and asked him to go to IHOP. John lied about liking The Smiths. That first date turned into pancakes and a long drive around Flagstaff, where we realized how much we had in common. It felt easy from the start. This first date led to countless others, ranging from ice skating to free climbing (Aria almost died).<br/><br/>
+</p>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+				<div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+					<Image
+						src={climb}
+						alt="wedding photo"
+						class="absolute inset-0 h-full w-full object-cover"
+					/>
+				</div>
+
+				<div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+					<Image
+						src={river}
+						alt="wedding photo"
+						class="absolute inset-0 h-full w-full object-cover"
+					/>
+				</div>
+			</div>
+			<p class="text-gray-600 leading-relaxed text-lg">
+Six months later, we moved in together. Not long after, we welcomed our beautiful daughter Button to the world and she took over the apartment. Life since then has been shared space, shared playlists, and learning how to live together.</p><br/><br/>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+				<div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+					<Image
+						src={button1}
+						alt="wedding photo"
+						class="absolute inset-0 h-full w-full object-cover"
+					/>
+				</div>
+
+				<div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+					<Image
+						src={button2}
+						alt="wedding photo"
+						class="absolute inset-0 h-full w-full object-cover"
+					/>
+				</div>
+			</div>
+						<p class="text-gray-600 leading-relaxed text-lg">
+John proposed to Aria at the top of Bear Peak, the highest point in Boulder. The answer was yes (after dry heaving for a few minutes).</p><br/><br/>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+				<div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+					<Image
+						src={proposal1}
+						alt="wedding photo"
+						class="absolute inset-0 h-full w-full object-cover"
+					/>
+				</div>
+
+				<div class="relative aspect-[4/3] overflow-hidden rounded-lg">
+					<Image
+						src={proposal2}
+						alt="wedding photo"
+						class="absolute inset-0 h-full w-full object-cover"
+					/>
+				</div>
+			</div>
+
+<p class="text-gray-600 leading-relaxed text-lg">Now we're excited to keep building a life together and celebrating with the people who've been part of it along the way.</p><br/><br/>
 		</Card>
 	</PageContainer>
 </Layout>
