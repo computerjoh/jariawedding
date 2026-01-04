@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import img1 from "../assets/1.jpg";
-import img2 from "../assets/2.jpg";
 import img3 from "../assets/3.jpg";
 import img4 from "../assets/4.jpg";
 import img5 from "../assets/5.jpg";
@@ -10,7 +10,7 @@ import img7 from "../assets/7.jpg";
 import img8 from "../assets/8.jpg";
 import img9 from "../assets/9.jpg";
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+const images = [img1, img3, img4, img5, img6, img7, img8, img9];
 ---
 
 <div class="max-w-5xl mx-auto mb-20 px-4">
@@ -32,18 +32,26 @@ const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
     </div>
 
     <!-- Controls -->
-    <button
-      class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-pink-600 rounded-full w-10 h-10 shadow"
-      onclick="move(-1)"
-    >
-      ‹
-    </button>
-    <button
-      class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-pink-600 rounded-full w-10 h-10 shadow"
-      onclick="move(1)"
-    >
-      ›
-    </button>
+<button
+  class="absolute left-4 top-1/2 -translate-y-1/2
+         bg-white/80 hover:bg-white
+         rounded-full w-10 h-10 shadow
+         flex items-center justify-center"
+  onclick="move(-1)"
+>
+  <Icon name="mdi:chevron-left" class="w-5 h-5 text-accent-1" />
+</button>
+
+<button
+  class="absolute right-4 top-1/2 -translate-y-1/2
+         bg-white/80 hover:bg-white
+         rounded-full w-10 h-10 shadow
+         flex items-center justify-center"
+  onclick="move(1)"
+>
+  <Icon name="mdi:chevron-right" class="w-5 h-5 text-accent-1" />
+</button>
+
   </div>
 </div>
 
