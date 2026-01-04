@@ -1,14 +1,41 @@
 ---
-import Card from "../components/Card.astro";
-import PageContainer from "../components/PageContainer.astro";
 import Layout from "../layouts/Layout.astro";
+import PageContainer from "../components/PageContainer.astro";
+import Card from "../components/Card.astro";
+
+const code = Astro.url.searchParams.get("code");
+
+if (code) {
+  return Astro.redirect(`/rsvp/${code}`);
+}
 ---
 
-<Layout title="RSVP - J & A Wedding">
-	<PageContainer maxWidth="lg">
-		<Card>
-			<h1 class="text-4xl sm:text-5xl mb-6 text-pink-600">RSVP</h1>
-			<p>Coming soon</p>
-		</Card>
-	</PageContainer>
+<Layout title="RSVP">
+  <PageContainer maxWidth="lg">
+    <Card>
+      <h1 class="text-3xl text-pink-600 mb-4">RSVP</h1>
+      <p class="text-gray-600 mb-6">
+        Enter the 4-digit code from your invitation.
+      </p>
+
+      <form method="GET" class="space-y-4">
+        <input
+          name="code"
+          inputmode="numeric"
+          pattern="[0-9]{4}"
+          maxlength="4"
+          placeholder="1234"
+          required
+          class="w-full rounded-md border border-gray-300 px-4 py-3 text-center text-lg tracking-widest focus:outline-none focus:ring-2 focus:ring-pink-500"
+        />
+
+        <button
+          type="submit"
+          class="w-full rounded-md bg-pink-600 py-3 text-white font-semibold hover:bg-pink-700 transition"
+        >
+          Continue
+        </button>
+      </form>
+    </Card>
+  </PageContainer>
 </Layout>
