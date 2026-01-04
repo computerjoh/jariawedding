@@ -1,19 +1,19 @@
 ---
 interface Props {
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
-  className?: string;
+	maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "full";
+	className?: string;
 }
 
 const maxWidthClasses = {
-  sm: 'max-w-2xl',
-  md: 'max-w-3xl',
-  lg: 'max-w-4xl',
-  xl: 'max-w-5xl',
-  '2xl': 'max-w-6xl',
-  full: 'max-w-full',
+	sm: "max-w-2xl",
+	md: "max-w-3xl",
+	lg: "max-w-4xl",
+	xl: "max-w-5xl",
+	"2xl": "max-w-6xl",
+	full: "max-w-full",
 };
 
-const { maxWidth = 'lg', className = '' } = Astro.props;
+const { maxWidth = "lg", className = "" } = Astro.props;
 ---
 
 <div class={`mx-auto px-4 sm:px-6 lg:px-8 py-8 ${maxWidthClasses[maxWidth]} ${className}`}>
